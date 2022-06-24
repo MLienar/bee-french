@@ -1,7 +1,14 @@
-.hero, .hero aside{
+.hero{
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-top: clamp(20px, 15%, 200px);
+    aside{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: clamp(10px, 5%, 20px);
+    }
     article{
         position: relative;
         width: 100%;
@@ -24,29 +31,38 @@
                 box-shadow: 0 0 50px rgba(0 0 0 / 0.1);
                 z-index: 1;
             }
-            img:nth-child(4){
+            .img1{
                 transform: rotate(-20deg);
-                top: calc(30% - 13vw);;
+                top: calc(30% - 13vw);
                 left: 19%;
                 width: clamp(100px, 25%, 600px);
+                @media screen and (max-width: 1300px) {
+                    top: calc(27% - 15vw);
+                }
             }
-            img:nth-child(5){
+            .img2{
             transform: rotate(15deg);           
             top: calc(44% - 13vw);
             left: 50%;
             width: clamp(100px, 33%, 600px);
             }
-            img:nth-child(6){
+            .img3{
                 transform: rotate(-15deg);
                 bottom: calc(21% - 3vw);
                 left: 17%;
                 width: clamp(100px, 30%, 600px);
             }
-            img:nth-child(7){
+            .img4{
                 transform: rotate(12deg);
                 right: 24%;
                 bottom: calc(5% + 3vw);
                 width: clamp(100px, 21%, 400px);
+                @media screen and (max-width: 1250px) {
+                    bottom: calc(3% + 3vw);
+                }
+                @media screen and (max-width: 500px) {
+                    right: 18%;
+                }
             }
             p{
                 position: absolute;
@@ -56,23 +72,37 @@
                 left: 16%;
             }
             h1{
-                font-size: clamp(70px, 12vw, 165px);;
-                font-weight: bold
+                font-size: clamp(70px, 12vw, 165px);
+                font-weight: bold;
+                clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
             }
-            h1:nth-child(2){
+            .custom_title{
                 position: absolute;
                 z-index: 2;
-                top: calc(50% - 14vw);
+                top: calc(60% - 14vw);
                 color: rgb(160, 53, 53);
                 left: calc(10% + 3vw);
+                @media screen and (max-width: 1600) {
+                    top: calc(50% - 14vw);
+                }
+                @media screen and (max-width: 800px) {
+                    top: calc(45% - 15vw);
+                }
+                @media screen and (max-width: 400px) {
+                    top: calc(40% - 15vw);
+                }
             }
-            h1:nth-child(3){
+            .af1_title{
                 position: absolute;
                 text-align: right;
                 z-index: 2;
                 color: rgb(53, 153, 160);
                 bottom: 10%;
                 left: 50%;
+                clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+                @media screen and (min-width: 500px) and (max-width: 770px) {
+                    bottom: 5%;
+                }
             }
         aside{
             position: absolute;

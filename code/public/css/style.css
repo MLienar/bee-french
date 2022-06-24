@@ -153,6 +153,7 @@ h2 {
 html,
 body {
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 body {
@@ -185,12 +186,19 @@ a {
   width: 1px;
 }
 
-.hero, .hero aside {
+.hero {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: clamp(20px, 15%, 200px);
 }
-.hero article, .hero aside article {
+.hero aside {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: clamp(10px, 5%, 20px);
+}
+.hero article {
   position: relative;
   width: 100%;
   display: flex;
@@ -200,72 +208,109 @@ a {
   height: clamp(300px, 60vh, 900px);
 }
 @media screen and (max-width: 770px) {
-  .hero article, .hero aside article {
+  .hero article {
     height: 40vh;
   }
 }
-.hero article img:nth-child(1), .hero aside article img:nth-child(1) {
+.hero article img:nth-child(1) {
   max-height: clamp(200px, 40%, 500px);
   max-width: 60vw;
   z-index: 3;
 }
-.hero article img:nth-child(n+2), .hero aside article img:nth-child(n+2) {
+.hero article img:nth-child(n+2) {
   position: absolute;
   border: 5px solid white;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
-.hero article img:nth-child(4), .hero aside article img:nth-child(4) {
+.hero article .img1 {
   transform: rotate(-20deg);
   top: calc(30% - 13vw);
   left: 19%;
   width: clamp(100px, 25%, 600px);
 }
-.hero article img:nth-child(5), .hero aside article img:nth-child(5) {
+@media screen and (max-width: 1300px) {
+  .hero article .img1 {
+    top: calc(27% - 15vw);
+  }
+}
+.hero article .img2 {
   transform: rotate(15deg);
   top: calc(44% - 13vw);
   left: 50%;
   width: clamp(100px, 33%, 600px);
 }
-.hero article img:nth-child(6), .hero aside article img:nth-child(6) {
+.hero article .img3 {
   transform: rotate(-15deg);
   bottom: calc(21% - 3vw);
   left: 17%;
   width: clamp(100px, 30%, 600px);
 }
-.hero article img:nth-child(7), .hero aside article img:nth-child(7) {
+.hero article .img4 {
   transform: rotate(12deg);
   right: 24%;
   bottom: calc(5% + 3vw);
   width: clamp(100px, 21%, 400px);
 }
-.hero article p, .hero aside article p {
+@media screen and (max-width: 1250px) {
+  .hero article .img4 {
+    bottom: calc(3% + 3vw);
+  }
+}
+@media screen and (max-width: 500px) {
+  .hero article .img4 {
+    right: 18%;
+  }
+}
+.hero article p {
   position: absolute;
   width: 25%;
   font-size: 0.75em;
   top: calc(550px + 5vw);
   left: 16%;
 }
-.hero article h1, .hero aside article h1 {
+.hero article h1 {
   font-size: clamp(70px, 12vw, 165px);
   font-weight: bold;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
-.hero article h1:nth-child(2), .hero aside article h1:nth-child(2) {
+.hero article .custom_title {
   position: absolute;
   z-index: 2;
-  top: calc(50% - 14vw);
-  color: #a03535;
+  top: calc(60% - 14vw);
+  color: rgb(160, 53, 53);
   left: calc(10% + 3vw);
 }
-.hero article h1:nth-child(3), .hero aside article h1:nth-child(3) {
+@media screen and (max-width: 1600) {
+  .hero article .custom_title {
+    top: calc(50% - 14vw);
+  }
+}
+@media screen and (max-width: 800px) {
+  .hero article .custom_title {
+    top: calc(45% - 15vw);
+  }
+}
+@media screen and (max-width: 400px) {
+  .hero article .custom_title {
+    top: calc(40% - 15vw);
+  }
+}
+.hero article .af1_title {
   position: absolute;
   text-align: right;
   z-index: 2;
-  color: #3599a0;
+  color: rgb(53, 153, 160);
   bottom: 10%;
   left: 50%;
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
 }
-.hero article aside, .hero aside article aside {
+@media screen and (min-width: 500px) and (max-width: 770px) {
+  .hero article .af1_title {
+    bottom: 5%;
+  }
+}
+.hero article aside {
   position: absolute;
   top: 100vh;
 }
@@ -298,6 +343,9 @@ footer {
 footer a {
   color: black;
 }
+footer li {
+  margin: 10px 0 10px 0;
+}
 footer .contenu_footer {
   display: flex;
   flex-direction: row;
@@ -316,6 +364,21 @@ footer .contenu_footer ul > li > ul {
 footer .contenu_footer ul > li > ul li:nth-child(1) {
   margin-right: 12px;
 }
+@media screen and (max-width: 715px) {
+  footer .contenu_footer ul > li > ul {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 715px) {
+  footer .contenu_footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    gap: 10px;
+  }
+}
 footer .contenu_droit_footer {
   display: flex;
   justify-content: space-between;
@@ -326,6 +389,21 @@ footer .contenu_droit_footer ul {
 }
 footer .contenu_droit_footer ul:nth-child(1) > li > h5 {
   visibility: hidden;
+}
+@media screen and (max-width: 975px) {
+  footer .contenu_droit_footer {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 715px) {
+  footer .contenu_droit_footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 100%;
+    gap: 10px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

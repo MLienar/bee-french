@@ -1,0 +1,35 @@
+footer{
+    padding: 50px;
+    a{
+        color: black;
+    }
+    .contenu_footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        ul, ul>li>ul{
+            list-style: none;
+        }
+        ul>li>ul{
+            margin: 0;
+            padding: 0; 
+            display: flex;
+            justify-content: flex-start;
+            li:nth-child(1){
+                margin-right: 12px;
+            }
+        }
+    }  
+    .contenu_droit_footer{
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+        ul{
+            list-style-type: none;
+        }
+        ul:nth-child(1)>li>h5{
+            visibility: hidden;
+        }
+    }     
+ }

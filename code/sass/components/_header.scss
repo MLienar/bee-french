@@ -1,0 +1,23 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: clamp(10px, 3%, 50px);
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        h5 {
+        font-weight: bold;
+        text-transform: capitalize;
+        }   
+        ul {
+            width: 275px;
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+        }
+    }
+    
+}
+

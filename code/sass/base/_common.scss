@@ -1,0 +1,35 @@
+html,
+body {
+  box-sizing: border-box;
+}
+
+body {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  background: #E7F3F3;
+  flex-direction: column;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.marges {
+  display: flex;
+  flex-flow: column nowrap;
+  width: clamp($min-width, $width, $max-width);
+}
+
+
+a{
+  text-decoration: none;
+}
+
+.reader-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

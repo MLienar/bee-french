@@ -1,0 +1,13 @@
+// Common
+@import "./vendors/reset";
+@import "./utils/variables";
+@import "./base/fonts";
+@import "./base/common";
+
+
+// Pages
+@import "./pages/home/hero";
+
+// Components
+@import "./components/header";
+@import "./components/footer";

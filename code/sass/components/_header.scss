@@ -2,11 +2,15 @@ header {
     display: flex;
     justify-content: space-between;
     padding: clamp(10px, 3%, 50px);
+    z-index: 999;
     nav {
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: baseline;
+        @media screen and (max-width: 550px) {
+           align-items: flex-start;
+        }
         h5 {
         font-weight: bold;
         text-transform: capitalize;
@@ -16,12 +20,76 @@ header {
             display: flex;
             justify-content: space-between;
             list-style: none;
+            @media screen and (max-width: 550px) {
+                display: none;
+            }
+        }
+        .toggle_menu{
+            display: none;
+            position: relative;
+            width: 30px;
+            cursor: pointer;
+            div{
+                width: 100%;
+                height: 2px;
+                background-color: black;
+                position: absolute;
+                transition: all 0.5s;
+            }
+            .arm_menu_1{
+                top: 0;
+            }
+            .arm_menu_2{
+                top: 10px;
+            }
+            .arm_menu_3{
+                top: 20px;
+            }
+            .arm_menu_1_bis{
+                transform: rotate(45deg);
+                transform-origin: top left;
+            }
+            .arm_menu_2_bis{
+                display: none;
+            }
+            .arm_menu_3_bis{
+                transform: rotate(-45deg);
+                transform-origin: bottom left;
+            }
+            @media screen and (max-width: 550px) {
+                 display: block;
+            }
+    
         }
     }
-    @media screen and (max-width: 550px) {
-       nav ul{
-        visibility: hidden;
-       } 
-    }
 }
-
+.dark_overlay_header{
+    position: fixed;
+    height: 100vh;
+    width: 200vw;
+    transform: translate(-50px, -200vh);
+    z-index: 997;
+    background-color: rgba(0, 0, 0, 0.561);
+}
+.header2{
+    display: none;
+    height: 100vh;
+    background-color: white;
+    transform: translate(0, -200vh);
+    position: fixed;
+    z-index: 998;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2em;
+    ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 50px;
+    }
+    @media screen and (max-width: 550px) {
+        display: flex;
+   }
+}

@@ -31,10 +31,10 @@ window.onload = function () {
         $('.four').removeClass('four');
     });
     let tl1 = gsap.timeline({ ease: "power4.inOut"})
-    tl1.from(".img1", { duration: 1.5, opacity: 0, rotate: 0 , x: -200, delay: 0.1})
-    tl1.from(".img2", { duration: 1.5, opacity: 0, x: -200, rotate: 0, delay: 0.1})
-    tl1.from(".img3", { duration: 1.5, opacity: 0, x: 200, rotate: 0, delay: 0.1})
-    tl1.from(".img4", { duration: 1.5, opacity: 0, x: 200, rotate: 0, delay: 0.1, onComplete : flyimg})
+    tl1.from(".img1", { duration: 1, opacity: 0, rotate: 0 , x: -200, delay: 0.1})
+    tl1.from(".img2", { duration: 1, opacity: 0, x: -200, rotate: 0, delay: 0.1})
+    tl1.from(".img3", { duration: 1, opacity: 0, x: 200, rotate: 0, delay: 0.1})
+    tl1.from(".img4", { duration: 1, opacity: 0, x: 200, rotate: 0, delay: 0.1, onComplete : flyimg})
     
     function flyimg() {
         gsap.to(".hero_img", {
@@ -48,7 +48,7 @@ window.onload = function () {
         });
     }
 
-        let tl2 = gsap.timeline({ defaults: { ease: "power4.inOut", duration: 2, delay: 1} })
+        let tl2 = gsap.timeline({ defaults: { ease: "power4.inOut"} })
         tl2.to('h1', { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)', opacity: 1, y: 0, duration: 2, stagger: 1.5
         });
    

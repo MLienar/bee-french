@@ -18,6 +18,10 @@ header {
             list-style: none;
         }
     }
-    
+    @media screen and (max-width: 550px) {
+       nav ul{
+        visibility: hidden;
+       } 
+    }
 }
 

@@ -46,15 +46,18 @@ window.onload = function () {
 
         
 
+    // Joues avec les valeurs que j'ai mis entre guillemets
+    // Je voyais un truc qui fasse un peu plus comme un fleur qui s'ouvre pour les photo si tu vois ce que je veux dire
+
     let tl1 = gsap.timeline({ ease: "power4.inOut"})
-    tl1.from(".img1", { duration: 1, opacity: 0, rotate: 0 , x: -200, delay: 0.1});
-    tl1.from(".img2", { duration: 1, opacity: 0, x: -200, rotate: 0, delay: 0.1});
-    tl1.from(".img3", { duration: 1, opacity: 0, x: 200, rotate: 0, delay: 0.1});
-    tl1.from(".img4", { duration: 1, opacity: 0, x: 200, rotate: 0, delay: 0.1, onComplete : flyimg});
+    tl1.from(".img1", { duration:0.5, opacity: 0, rotate: 0, scale: 0.2,}, "<0.1");
+    tl1.from(".img2", { duration:0.5, opacity: 0, rotate: 0}, "<0.12");
+    tl1.from(".img3", { duration:0.5, opacity: 0, rotate: 0}, "<0.14");
+    tl1.from(".img4", { duration:0.5, opacity: 0, rotate: 0, onComplete : flyimg}, "<0.2");
     
     function flyimg() {
         gsap.to(".hero_img", {
-            duration: 6,
+            duration: 2,
             y: -15,
             x: 5,
             repeat: -1,

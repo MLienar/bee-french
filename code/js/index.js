@@ -40,7 +40,9 @@ window.onload = function () {
         $('.arm_menu_1').toggleClass( "arm_menu_1_bis" );
         $('.arm_menu_2').toggleClass( "arm_menu_2_bis" );
         $('.arm_menu_3').toggleClass( "arm_menu_3_bis" );  
-        $('.arrow-up').toggleClass( "destroy" );  
+        $('.arrow-up').toggleClass( "destroy" ); 
+        $('header>nav').toggleClass( "padding_toogle" );
+        $('header').toggleClass( "header_1_bis" );
         menu.reversed() ? menu.play() : menu.reverse();  
     });
 
@@ -50,10 +52,10 @@ window.onload = function () {
     // Je voyais un truc qui fasse un peu plus comme un fleur qui s'ouvre pour les photo si tu vois ce que je veux dire
 
     let tl1 = gsap.timeline({ ease: "power4.inOut"})
-    tl1.from(".img1", { duration:0.5, opacity: 0, rotate: 0, scale: 0.2,}, "<0.1");
-    tl1.from(".img2", { duration:0.5, opacity: 0, rotate: 0}, "<0.12");
-    tl1.from(".img3", { duration:0.5, opacity: 0, rotate: 0}, "<0.14");
-    tl1.from(".img4", { duration:0.5, opacity: 0, rotate: 0, onComplete : flyimg}, "<0.2");
+    tl1.from(".img1", { duration:0.5, opacity: 0, rotate: 100, scale: 0.2, width: 0, x: 200, y: 400});
+    tl1.from(".img2", { duration:0.5, opacity: 0, rotate: 100, scale: 0.2, width: 0, x: -200, y: 400}, "<0.15");
+    tl1.from(".img3", { duration:0.5, opacity: 0, rotate: 100, scale: 0.2, width: 0, x: 200, y: -400}, "<0.2");
+    tl1.from(".img4", { duration:0.5, opacity: 0, rotate: 100, scale: 0.2, width: 0, x: -200, y: -400, onComplete : flyimg}, "<0.25");
     
     function flyimg() {
         gsap.to(".hero_img", {
@@ -68,7 +70,7 @@ window.onload = function () {
     }
 
         let tl2 = gsap.timeline({ defaults: { ease: "power4.inOut"} })
-        tl2.to('h1', { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)', opacity: 1, y: 0, duration: 2, stagger: 1.5
+        tl2.to('h1', { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)', opacity: 1, y: 0, duration: 1.25, stagger: 0.25
         });
    
 

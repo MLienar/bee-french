@@ -1,13 +1,14 @@
 header {
     display: flex;
     justify-content: space-between;
-    padding: clamp(10px, 3%, 50px);
+    padding: clamp(10px, 3%, 50px) 0;
     z-index: 999;
     nav {
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: baseline;
+        padding: 0;
         @media screen and (max-width: 550px) {
            align-items: flex-start;
         }
@@ -24,6 +25,7 @@ header {
                 display: none;
             }
         }
+        
         .toggle_menu{
             display: none;
             position: relative;
@@ -61,8 +63,16 @@ header {
             }
     
         }
+    } 
+    .padding_toggle{
+        padding: 5%;
     }
+    .header_1_bis{
+        position: fixed;
+        width: clamp($min-width, $width, $max-width);
+    }  
 }
+
 .dark_overlay_header{
     position: fixed;
     height: 100vh;

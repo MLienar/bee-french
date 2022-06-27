@@ -1,0 +1,76 @@
+.wrap_all_produit{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: clamp(60px, 10%, 100px) 0;
+    .pres_produit{
+        width: clamp(350px, 50%, 1500px);
+        padding-bottom: 7%;  
+    }
+    .wrap_cd_produit{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 50px;
+        .cd_produit{
+            width: clamp(200px, 30vw, 300px);
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            transition: all 0.5s;
+            padding: clamp(5px, 3%, 40px);
+            .img_produit{
+                width: 100%;
+                box-shadow: none;
+                margin-bottom: 5%;
+            }
+            h3{
+                font-weight: 550;
+                font-size: 1.2em;
+            }
+            .overlay_produit_1{
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                transition: all 0.7s;
+                overflow: hidden;
+            }
+            .overlay_produit_2{
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.575);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+                transition: all 0.7s;
+                gap: 15px;
+                a, p{
+                    color: white;
+                }
+            }
+            &:hover{
+                .overlay_produit_1, .overlay_produit_2{
+                    opacity: 1;         
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1176px) {
+        align-items: center;
+        .pres_produit{
+        text-align: center;
+        width: 100%;
+        }
+    }
+}

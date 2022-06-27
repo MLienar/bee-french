@@ -43,6 +43,13 @@ a:hover{
   color: grey;
 }
 
+h3{
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: clamp(20px, 1.5vw, 25px);
+  margin-bottom: 20px;
+}
+
 p{
   font-size: clamp(0.7em, 4vw, 1em);
 }

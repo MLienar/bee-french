@@ -88,21 +88,22 @@ footer{
             width: 20px;
             display: block;
             transform: rotate(-45deg);
+            &:after {
+                content: "";
+                background-color: black;
+                width: 20px;
+                height: 1px;
+                display: block;
+                border-radius: 1px;
+                transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 1.5);
+                transform-origin: right center;
+                z-index: -1;
+                @media  (max-width: 715px) {
+                    background-color: $color-primary;
+                }  
+            }
         }
-        .left-arm:after {
-            content: "";
-            background-color: black;
-            width: 20px;
-            height: 1px;
-            display: block;
-            border-radius: 1px;
-            transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 1.5);
-            transform-origin: right center;
-            z-index: -1;
-            @media  (max-width: 715px) {
-                background-color: $color-primary;
-            }  
-        }
+        
         .right-arm {
             position: absolute;
             z-index: 1;
@@ -113,34 +114,36 @@ footer{
             display: block;
             transform: rotate(45deg);
             border-radius: 2px;
+            &:after {
+                content: "";
+                background-color: black;
+                width: 20px;
+                height: 1px;
+                display: block;
+                border-radius: 1px;
+                transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 1.5);
+                transform-origin: left center;
+                z-index: -1;
+                @media  (max-width: 715px) {
+                    background-color: $color-primary;
+                }  
+            }
         }
-        .right-arm:after {
-            content: "";
-            background-color: black;
-            width: 20px;
-            height: 1px;
-            display: block;
-            border-radius: 1px;
-            transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 1.5);
-            transform-origin: left center;
-            z-index: -1;
-            @media  (max-width: 715px) {
-                background-color: $color-primary;
-            }  
-        }
-        .arrow-up:hover {
+        
+        &:hover {
             transition: all 0.1s;
+            .left-arm:after {
+                transform: rotate(-10deg);
+            }
+            .right-arm:after {
+                transform: rotate(10deg);
+            }
+            .arrow-slide {
+                transition: all 0.4s ease-in-out;
+                transform: translateY(200%);
+            } 
         }
-        .arrow-up:hover .left-arm:after {
-            transform: rotate(-10deg);
-        }
-        .arrow-up:hover .right-arm:after {
-            transform: rotate(10deg);
-        }
-        .arrow-up:hover .arrow-slide {
-            transition: all 0.4s ease-in-out;
-            transform: translateY(200%);
-        }  
+         
        
         @media  (max-width: 715px) {
             border: none;

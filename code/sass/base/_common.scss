@@ -6,6 +6,7 @@ html,
 body {
   box-sizing: border-box;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -25,6 +26,7 @@ body {
 
 img{
   object-fit: cover;
+  box-shadow: 0 0 50px rgba(0 0 0 / 0.1);
 }
 
 button{

@@ -24,11 +24,11 @@
             max-height: clamp(200px, 40%, 500px);
             max-width: 60vw;
             z-index: 3;
+            box-shadow: none;
             }
             img:nth-child(n+2){
                 position: absolute;
                 border: 5px solid white;
-                box-shadow: 0 0 50px rgba(0 0 0 / 0.1);
                 z-index: 1;
             }
             .img1{
